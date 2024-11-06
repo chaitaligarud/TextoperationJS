@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: aqua;
+        }
+       
+        button {
+           background-color: blue;
+           color: #f9f9f9;
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 20px;
+        }
+        .output{
+            margin-top: 20px;
+            padding: 10px;
+            height:60px;
+            width:500px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .input{
+            height:100px;
+            width: 500px;
+            border-radius:5px solid black;
+
+        }
+    </style>
+</head>
+<body>
+
+<h1>Text Operations</h1>
+<input type="text" id="input" placeholder="Enter text here..."class="input"><br><br>
+<input type="text" id="output" placeholder="output"class="output">
+
+<div>
+    <button onclick="handleTextOps('wordcount')"class="button">Count Words</button>
+    <button onclick="handleTextOps('charcount')"class="button">charactercount</button>
+    <button onclick="handleTextOps('uppercase')"class="button">Uppercase</button>
+    <button onclick="handleTextOps('lowercase')"class="button">Lowercase</button>
+    
+</div>
+
+
+
+<script>
+    function handleTextOps(op){
+ const inputElement=document.getElementById("input")
+ const outputElement=document.getElementById("output");
+     switch (op)
+     {
+        case "uppercase":
+            outputElement.value=inputElement.value.toUpperCase();
+            break;
+        case "lowercase":
+            outputElement.value=inputElement.value.toLowerCase();
+            break;   
+        case "wordcount":    
+            const totalWords=inputElement.value.split("").length;
+            outputElement.value=`Word Count:${totalWords}`;
+            break;
+        case "charcount":
+            outputElement.value=`Character Count:${inputElement.value.length}`;
+            break;
+
+
+     }
+    
+}
+</script>
+
+</body>
+</html>
