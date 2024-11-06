@@ -96,9 +96,9 @@
             outputElement.value=inputElement.value.toLowerCase();
             break;   
         case "wordcount":    
-            const totalWords=inputElement.value.split("").length;
-            outputElement.value=`Word Count:${totalWords}`;
-            break;
+        const totalWords=inputElement.value.split(/\s+/).filter(word => word.length > 0);
+         outputElement.value=`Word Count:${totalWords.length}`;
+         break;
         case "charcount":
             outputElement.value=`Character Count:${inputElement.value.length}`;
             break;
