@@ -16,41 +16,71 @@
         button {
            background-color: blue;
            color: #f9f9f9;
-            margin: 5px;
+            margin:10px;
             padding: 10px;
             font-size: 16px;
             border-radius: 20px;
         }
         .output{
-            margin-top: 20px;
-            padding: 10px;
-            height:60px;
+            
+           
+            height:100px;
             width:500px;
-            border: 1px solid #ccc;
+            border-radius: 2px solid black;
             background-color: #f9f9f9;
         }
         .input{
             height:100px;
             width: 500px;
-            border-radius:5px solid black;
+            border-radius:2px solid black;
 
+
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+        }
+        .container1{
+            display: flex;
+            flex-direction: column;
+            justify-self:center;
+        }
+        @media (min-width:400px) and (max-width:600px) {
+            .input{
+            height:100px;
+            width:300px;
+            border-radius:5px solid black;
+            }
+            .output{
+                height:100px;
+                width: 300px; 
+                border-radius: 5px solid black;
+            }
+            .container{
+                display:flex;
+                flex-direction: column;
+            }
+            .button{
+                height:50px;
+                width: 200px;
+            }
         }
     </style>
 </head>
 <body>
-
+<div class="container1">
 <h1>Text Operations</h1>
 <input type="text" id="input" placeholder="Enter text here..."class="input"><br><br>
 <input type="text" id="output" placeholder="output"class="output">
 
-<div>
+<div class="container">
     <button onclick="handleTextOps('wordcount')"class="button">Count Words</button>
     <button onclick="handleTextOps('charcount')"class="button">charactercount</button>
     <button onclick="handleTextOps('uppercase')"class="button">Uppercase</button>
     <button onclick="handleTextOps('lowercase')"class="button">Lowercase</button>
     
 </div>
-
+</div>
 
 
 <script>
